@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-pragma solidity >=0.5.12;
+pragma solidity >=0.6.12;
 
 // FIXME: This contract was altered compared to the production version.
 // It doesn't use LibNote anymore.
@@ -33,7 +33,7 @@ contract Dai {
 
     // --- ERC20 Data ---
     string  public constant name     = "Xai Stablecoin";
-    string  public constant symbol   = "Xai";
+    string  public constant symbol   = "XAI";
     string  public constant version  = "1";
     uint8   public constant decimals = 18;
     uint256 public totalSupply;
