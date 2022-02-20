@@ -80,7 +80,7 @@ contract LinearDecrease is Abacus {
     //
     // Note the internal call to mul multiples by RAY, thereby ensuring that the rmul calculation
     // which utilizes top and tau (RAY values) is also a RAY value.
-    function price(uint256 top, uint256 dur) override external view returns (uint256) {
+    function price(uint256 top, uint256 dur) external view returns (uint256) {
         if (dur >= tau) return 0;
         return rmul(top, mul(tau - dur, RAY) / tau);
     }
@@ -168,7 +168,7 @@ contract StairstepExponentialDecrease is Abacus {
     // returns: top * (cut ^ dur)
     //
     //
-    function price(uint256 top, uint256 dur) override external view returns (uint256) {
+    function price(uint256 top, uint256 dur) external view returns (uint256) {
         return rmul(top, rpow(cut, dur / step, RAY));
     }
 }
@@ -254,7 +254,7 @@ contract ExponentialDecrease is Abacus {
     //
     // returns: top * (cut ^ dur)
     //
-    function price(uint256 top, uint256 dur) override external view returns (uint256) {
+    function price(uint256 top, uint256 dur) external view returns (uint256) {
         return rmul(top, rpow(cut, dur, RAY));
     }
 }

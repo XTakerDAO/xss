@@ -68,7 +68,7 @@ contract Dog {
         uint256 dirt;  // Amt DAI needed to cover debt+fees of active auctions per ilk [rad]
     }
 
-    VatLike immutable public vat;  // CDP Engine
+    VatLike public vat;  // CDP Engine
 
     mapping (bytes32 => Ilk) public ilks;
 
